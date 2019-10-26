@@ -1,0 +1,114 @@
+<html><head>
+<meta http-equiv="content-type" content="text/html; charset=windows-1252"><title>Ontology Development Pitfalls</title>
+<meta name="keywords" content="ontology mistakes">
+</head><body background="Ontology%20Development%20Pitfalls_files/border.gif">
+<ul>
+<b><font point-size="24" weight="heavy" style="bold" face="Arial, Helvetica">Ontology Development Pitfalls</font></b><p>
+
+[<a href="http://www.adampease.org/OP/index.html">Home</a> |
+  <a href="http://54.183.42.206:8080/sigma/Browse.jsp?kb=SUMO">Browse</a> | 
+  <a href="https://github.com/ontologyportal/sumo" title="Download ontology and lexicon source files">Download</a> | 
+  <a href="http://www.adampease.org/OP/Pubs.html" title="publications about SUMO">Publications</a> | 
+  <a href="http://www.adampease.org/OP/Projects.html">Projects</a> |
+  <a href="http://ontologyportal.github.io/sigmakee/">Tools</a> | 
+  <a href="http://www.adampease.org/OP/WhatsNew.html">What‘s New</a> | 
+  <a href="http://www.adampease.org/OP/About.html">About</a>]</p><p>
+
+  
+</p><ul> 
+    <li>Failure to distinguish between an instance-of relationship 
+    and a subclass-of relationship.  "Bob" is an instance of Mammal.  Human is 
+    a subclass of Mammal.  
+    
+    </li><li>Failure to distinguish part-of from subclass-of.  A wheel is a part of 
+    a car, not a more specific type of car.  An opening argument by a trial 
+    lawyer is part of a criminal legal proceeding, not a specific type of 
+    criminal legal proceeding.  This error is surprisingly common in OWL since 
+    it has a convenient "rdf:type" relationship, but not a corresponding one 
+    for part-of.  That's a danger with a simplistic upper ontology.  
+    
+    </li><li>Modeling events as relations.  One can see this occasionally in the 
+    linguistics literature.  (eats Bill HamSandwich) looks simple and 
+    convenient, but if one then wants to say when the eating happened, there's 
+    a problem.  The typical solution is to say (occurs Tuesday (eats Bill 
+    HamSandwich)), but most languages that have some use in inference, like 
+    OWL, don't allow statements as arguments to relations, because it's 
+    extremely difficult to reason with.  Another example of this 
+    problem, which has its roots in the classic paper,
+    [Davidson, Donald (1967): "The Logical Form of Action Sentences"]
+    and is developed further in the very readable 
+    [<a href="http://mitpress.mit.edu/catalog/item/default.asp?tid=8976&amp;ttype=2">Parsons</a>, 
+    1991], is that of 
+    (stabs Brutus Caesar) or "Brutus stabs Caesar".  One can quickly add that 
+    "Brutus stabbed Caesar deeply with a knife on Tuesday" and see that having 
+    events as relations is a problem.  
+    
+    </li><li>"Ontological promiscuity".  Creation of terms which aren't 
+    sufficiently distinguished from other terms.  Each term should have to 
+    "fight" for its existence in an ontology, and not just be added on a whim.  
+    Many of the same folks who create ontologies with tons of terms that 
+    aren't well defined know well that they couldn't take the same approach 
+    with a database, or Java code.  If one just adds tons of procedures into a 
+    program with the thought that they might be used at some point, an 
+    unmangeable mess is the result.  A related issue is that the ontology 
+    modeling language must be able to express differences in concepts for this 
+    problem to be apparent to the modeler.  In a simple taxonomy language for 
+    example, since the modeling isn't able to state definitions, other than in 
+    natural language, it may not become apparent when two terms have the same 
+    meaning, or their intended meaning isn't really clear.  
+    
+    </li><li>Confusing language and concepts.  This is related to, and often a 
+    cause of "ontological promiscuity".  People use a lot of different names 
+    for the same thing in communication.  The lazy solution is just to make 
+    all the words or phrases terms in the ontology.  But that results in a 
+    drastic loss of utility for interoperability because then software can use 
+    different formal terms to refer to the same notion.  
+    
+    </li><li>Modeling roles as classes.  Teacher is a role.  Human is a class.  If 
+    I define "Bob is a teacher" or (instance Bob Teacher), then I lose a way 
+    to refer to Bob once he retires.  This is a very common and serious error, 
+    usually caused by developers not thinking about how facts can change over 
+    time.  There is a tension here however if one uses an ontology in 
+    a natural language processing application.  MILO contains a number of 
+    concepts which map cleanly to WordNet synsets, but which are a bit
+    questionable as terms in a strictly ontological sense.
+    
+    </li><li>Failure to reuse.  The first impulse of many programmers is to create 
+    from scratch.  It's fun to create new content that one understands 
+    intimately.  It's a chore to learn someone else's model, because 
+    inevitably you're not going to agree with every facet of it.  It takes 
+    time to understand someone else's model or code, and that's time that 
+    could be spent actually writing code.  But in software, all developers 
+    accept the principle of reuse, in part, simply because it's now 
+    impractical to write your own operating system just because you want to 
+    write a group calendar application.  The results of writing from scratch 
+    are the same for ontologies as they are for procedural software - wasted 
+    effort, lack of standardization, and usually poorer quality than would 
+    have been the case if content were reused.  
+  </li></ul><p>
+    
+There are many other pitfalls of course, but we might venture to say that 
+most other pitfalls aren't a problem in practice because too many people 
+are still making the simple ones.  Someday, we'll be warning against the 
+problems of modeling that encapsulates modal ("can", "may", "should") or 
+normative ("obligation", "permission") force into specific action types, 
+but most people aren't working with models (or even languages) that would 
+allow them to make such mistakes.  Ontologies are currently dominated by 
+the more simple mistakes.  </p><p>
+
+It's also the case that some of these guidelines have exceptions, especially
+for work in progress.</p><p>
+
+
+<a href="mailto:adampease%20at%20earthlink%20dot%20net">Webmaster</a></p><p>
+
+<script>
+var theDate = ""
+theDate = document.lastModified
+document.writeln("Last modified: ");
+document.write(theDate);
+document.write();
+</script>Last modified: 
+01/08/2016 05:04:31</p>
+
+</ul></body></html>
