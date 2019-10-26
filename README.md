@@ -1,0 +1,11 @@
+# resource-manager
+Tracking life and productivity resources
+
+    Resource Manager aids the inventory management system under                                                                                                                                                                                                                                                                
+    development.  It mainly looks at the availability of resources and                                                                                                                                                                                                                                                         
+    the management of distractions in order to maximize productivity                                                                                                                                                                                                                                                           
+    on the project, since productivity leads to solved problems which                                                                                                                                                                                                                                                          
+    contributes to stability which recycles into productivity.  It is                                                                                                                                                                                                                                                          
+    kind of a cross roads project, integrating things like bill                                                                                                                                                                                                                                                                
+    payment, shopping lists, supply chain info, productiivty                                                                                                                                                                                                                                                                   
+    conditions, trip plans, resource usage rules, etc. 
